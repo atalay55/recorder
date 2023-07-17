@@ -122,6 +122,11 @@ class _RecordAndPlayScreenState extends State<RecordAndPlayScreen> {
         path =   result.files.single.path!;
       });
     }
+
+    await player.stop();
+    await play(path);
+
+
   }
 
 
@@ -262,6 +267,10 @@ class _RecordAndPlayScreenState extends State<RecordAndPlayScreen> {
                       padding:  EdgeInsets.only(top: width/10.0),
                       child: ElevatedButton(onPressed: () async{
                            _selectFiles();
+
+                           setState(() {
+
+                           });
                 }, child: Text("Muzik dosyası seç"),
                       style: ButtonStyle( shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
